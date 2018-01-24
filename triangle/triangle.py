@@ -32,16 +32,16 @@ class triangle():
       else:
          return 1;
       
-   def draw(self, color='b'):
+   def draw(self, color='b', linewidth=1.0):
       for i in self.edge:
-         i.draw(color)
+         i.draw(color, linewidth)
       return 0
 
-   def drawAlone(self, color='b'):
+   def drawAlone(self, color='b', linewidth=1.0):
       # 'r' for red
       margin = 1
-      self.draw('r')
-      self.longEdge.draw('g')
+      self.draw(color, linewidth)
+      self.longEdge.draw('g', linewidth)
       plt.plot(self.longVtx[0][0], self.longVtx[0][1], 'o')
       plt.plot(self.longEdge.mid[0], self.longEdge.mid[1], 'o')
       #plt.plot(self.mid[0], self.mid[1], 'o')

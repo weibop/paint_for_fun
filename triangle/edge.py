@@ -21,14 +21,15 @@ class edge():
       else:
          return 1;
 
-   def draw(self, color='b'):
-      plt.plot([self.p1[0],self.p2[0]] , [self.p1[1],self.p2[1]], color)
+   def draw(self, color='b', linewidth=1.0):
+      line = plt.plot([self.p1[0],self.p2[0]] , [self.p1[1],self.p2[1]])#, clor
+      plt.setp(line, color=color, linewidth=linewidth)
       return
    
-   def drawAlone(self, color='b'):
+   def drawAlone(self, color='b', linewidth=1.0):
       # 'r' for red
       margin = 1
-      self.draw(color) #plt.plot([self.p1[0],self.p2[0]] , [self.p1[1],self.p2[1]], color)
+      self.draw(color, linewidth) #plt.plot([self.p1[0],self.p2[0]] , [self.p1[1],self.p2[1]], color)
       print('mid point: x=%0.2f,y=%0.2f'%(self.mid[0], self.mid[1]))
       plt.plot(self.mid[0], self.mid[1], 'o')
       plt.axis([self.x_min-margin, self.x_max+margin, self.y_min-margin, self.y_max+margin])

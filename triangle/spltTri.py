@@ -23,15 +23,15 @@ class spltTri():
       tempT2 = triangle.triangle(t.longVtx[2], t.longVtx[0], t.longEdge.mid);
       return [tempT1, tempT2]
       
-   def draw(self, color='b'):
+   def draw(self, color='b', linewidth=1.0):
       for i in self.subT:
-         i.draw()
+         i.draw(color, linewidth)
       return 
 
-   def drawAlone(self, color='b'):
+   def drawAlone(self, color='b', linewidth=1.0):
       # 'r' for red
       margin = 1
-      self.draw(color)
+      self.draw(color, linewidth)
       plt.axis([self.x_min-margin, self.x_max+margin, self.y_min-margin, self.y_max+margin])
       plt.show()
       return      
@@ -48,5 +48,5 @@ if __name__ == "__main__":
    it1 = spltTri(t1,6)
    it2 = spltTri(t2,3)
    it1.draw()
-   it2.drawAlone('ro');
+   it2.drawAlone('r', 0.1);
 
