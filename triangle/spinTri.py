@@ -22,8 +22,9 @@ class spinTri():
          i.draw(color, linewidth)
       return
    
-   def drawSpin(self, color='b', linewidth=1.0):
+   def drawSpin(self, color='b', linewidth=1.0, lineratio=1.0):
       currT = self.origT
+      width = linewidth
       for i in range(self.iter):
          ratioX = abs(currT.v[1][0] - currT.v[2][0])*self.ratio
          ratioY = abs(currT.v[1][1] - currT.v[2][1])*self.ratio
@@ -37,21 +38,22 @@ class spinTri():
             newY = currT.v[1][1] + ratioY
          newPoint = [newX, newY]
          newEdge = edge.edge(currT.v[0], newPoint)
-         newEdge.draw(color, linewidth)
+         newEdge.draw(color, width)
+         width = width*lineratio
          newT = triangle.triangle(newPoint, currT.v[2], currT.v[0])
          currT = newT
          
       return
    
-   def draw(self, color='b', linewidth=1.0):
+   def draw(self, color='b', linewidth=1.0, lineratio=1.0):
       self.drawFrame(color, linewidth)
-      self.drawSpin(color, linewidth)
+      self.drawSpin(color, linewidth, lineratio)
       return 
 
-   def drawAlone(self, color='b', linewidth=1.0):
+   def drawAlone(self, color='b', linewidth=1.0, lineratio=1.0):
       # 'r' for red
       margin = 1
-      self.draw(color, linewidth)
+      self.draw(color, linewidth, lineratio)
       plt.axis([self.x_min-margin, self.x_max+margin, self.y_min-margin, self.y_max+margin])
       plt.show()
       return     

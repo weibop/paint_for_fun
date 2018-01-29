@@ -5,11 +5,12 @@ import spltTri
 
 if __name__ == "__main__":
    print(__name__, "start ...")
-   ratio = 0.08
-   iteration = 50
+   triratio = 0.05
+   iteration = 100
    split = 5
    color = 'b'
-   width = 1
+   linewidth = 0.08
+   lineratio = 1.02
    a = [0, 0]
    b = [20, 20]
    c = [20, 0]
@@ -21,14 +22,14 @@ if __name__ == "__main__":
    it2 = spltTri.spltTri(t2,split)
    for i in it1.subT:
       print('%d', i)
-      t = spinTri.spinTri(i, iteration, ratio);
-      t.draw(color, width)
+      t = spinTri.spinTri(i, iteration, triratio);
+      t.draw(color, linewidth, lineratio)
       
    print('123')
    for i in it2.subT:
       print('%d', i)
-      t = spinTri.spinTri(i, iteration, ratio);
-      t.draw(color, width)
+      t = spinTri.spinTri(i, iteration, triratio);
+      t.draw(color, linewidth, lineratio)
       
    t1.show();
 
