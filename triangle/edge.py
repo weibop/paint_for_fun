@@ -14,6 +14,7 @@ class edge():
       self.y_max = max(self.p1[1],self.p2[1])
       self.mid = [(p1[0]+p2[0])/2, (p1[1]+p2[1])/2]
       self.len = math.sqrt(math.pow(p1[0]-p2[0],2) + math.pow(p1[1]-p2[1],2))
+      return
 
    def checkPoint(self, p):
       if(len(p)==2):
