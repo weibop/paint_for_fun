@@ -1,4 +1,6 @@
 import matplotlib.pyplot as plt
+#  use below command to install matplotlib components:
+#  pip install matplotlib
 import triangle
 import spinTri
 import spltTri
